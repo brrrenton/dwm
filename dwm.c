@@ -234,6 +234,7 @@ static int xerror(Display *dpy, XErrorEvent *ee);
 static int xerrordummy(Display *dpy, XErrorEvent *ee);
 static int xerrorstart(Display *dpy, XErrorEvent *ee);
 static void zoom(const Arg *arg);
+static void reset(const Arg *arg);
 
 /* variables */
 static const char broken[] = "broken";
@@ -2132,6 +2133,18 @@ zoom(const Arg *arg)
 		if (!c || !(c = nexttiled(c->next)))
 			return;
 	pop(c);
+}
+
+void
+reset(const Arg *arg)
+{
+  selmon->mfact = selmon->pertag->mfacts[selmon->pertag->curtag] = mfact;
+  selmon->nmaster = selmon->pertag->nmasters[selmon->pertag->curtag] = nmaster;
+  
+  selmon->lt[selmon->sellt] = selmon->pertag->ltidxs[selmon->pertag->curtag][selmon->sellt] = (Layout *)&layouts[0];
+  strncpy(selmon->ltsymbol, selmon->lt[selmon->sellt]->symbol, sizeof selmon->ltsymbol);
+  
+	arrange(selmon);
 }
 
 int
