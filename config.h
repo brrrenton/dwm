@@ -46,9 +46,10 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 static const Layout layouts[] = {
     /* symbol     arrange function */
     { "[>]",      tile },    /* first entry is default */
-    { "[#]",      gaplessgrid },
     { "[v]",      bstack },
     { "[c]",      columns },
+    { NULL,       NULL },
+    { "[#]",      gaplessgrid },
     { NULL,       NULL },
     { "[+]",      monocle },
     { NULL,       NULL },
@@ -112,8 +113,9 @@ static Key keys[] = {
 
     { MODKEY,                       XK_Return, zoom,           {0} },                   // Swap master window
     { MODKEY,                       XK_q,      killclient,     {0} },                   // Close window
-    //{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },    // Set layout to "tile"
     { MODKEY,                       XK_space,  cyclelayout,    {.i = +1 } },            // Cycle tiled layouts
+    
+    { MODKEY,                       XK_g,      setlayout,      {.v = &layouts[LENGTH(layouts) - 4]} },    // Set layout to "gaplessgrid"
     { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[LENGTH(layouts) - 2]} },    // Set layout to "monocle"
 
     { MODKEY,                       XK_f,      togglefloating, {0} },                   // Toggle window floating
