@@ -75,7 +75,7 @@ static const char *calccmd[]    = { "gnome-calculator", NULL };
 static const char *wwwcmd[]   = { "x-www-browser", NULL };
 static const char *wwwicmd[]  = { "x-www-browser", "--incognito", NULL };
 
-static const char *settingscmd[] = { "gnome-control-center", "-o", NULL };
+static const char *settingscmd[] = { "gnome-control-center", NULL };
 static const char *displaycmd[] = { "gnome-control-center", "display", NULL };
 
 #include "movestack.c"
