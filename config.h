@@ -132,6 +132,7 @@ static Key keys[] = {
     { MODKEY,                       XK_r,      reset,          {0} },                   // Reset settings for current tag
 
     { MODKEY|ShiftMask,             XK_q,      quit,           {0} },                   // Quit DWM
+    { MODKEY|ShiftMask,             XK_r,      quit,           {1} },                   // Restart DWM
 
     TAGKEYS(                        XK_1,                      0)
     TAGKEYS(                        XK_2,                      1)
