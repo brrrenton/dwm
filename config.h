@@ -67,8 +67,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "j4-dmenu-desktop.sh", dmenumon, NULL };
-static const char *termcmd[]  = { "tabbed.sh", NULL };
+static const char *dmenucmd[] = { "j4_dmenu_desktop", dmenumon, NULL };
+static const char *termcmd[]  = { "alacritty_tabbed_window", NULL };
 static const char *fmcmd[]    = { "nautilus", "-w", NULL };
 static const char *txtcmd[]    = { "gedit", NULL };
 static const char *calccmd[]    = { "gnome-calculator", NULL };
